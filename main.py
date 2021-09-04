@@ -18,4 +18,7 @@ shippings = []
 urls = []
 
 for items in ul.findAll('li', attrs={'class': 's-item'}):
-    items.find('h3', attrs={'class': 's-item__title'})
+    titles.append(items.find('h3', attrs={'class': 's-item__title'}).text)
+    prices.append(items.find('span', attrs={'class': 's-item__price'}).text)
+    shippings.append(items.find(
+        'span', attrs={'class': 's-item__shipping'}).text)
